@@ -1,2 +1,2 @@
 <h1>Document show page</h1>
-<%= link_to 'View', document_path(@document.id, :format => 'pdf') %>
+<%= link_to 'View pdf', document_path(@document.id, :format => 'pdf'), class: 'btn btn-primary' %>
