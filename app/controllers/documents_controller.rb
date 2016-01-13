@@ -2,13 +2,13 @@ class DocumentsController < ApplicationController
   before_action :authenticate_user!
 
   def new
-    @document = current_user.documents.new
+    @document = Document.new
   end
 
   def create
     document = current_user.documents.build(documents_params)
-    document.save ? flash[:message] = "Success, document has been created!" : flash[:error] = "Document did not save, please try again."
-    redirect_to root_path
+    document.save ? flash[:success] = "Success, document has been created!" : flash[:error] = "Document did not save, please try again."
+      redirect_to root_path
   end
 
   private

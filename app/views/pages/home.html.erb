@@ -1,5 +1,9 @@
 <% if user_signed_in? %>
-  <h1>You are signed in</h1>
+  <div class="col-md-4 col-md-offset-4">
+    <div class="well">
+      <%= link_to "Create Document", new_document_path, class: 'btn btn-primary', method: :get %>
+    </div>
+  </div>
 <% else %>
   <div class="col-md-4 col-md-offset-4">
     <h2>Welcome</h2>
