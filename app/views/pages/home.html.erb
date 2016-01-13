@@ -1,1 +1,12 @@
-<h2>Homepage</h2>
+<% if user_signed_in? %>
+
+<% else %>
+  <div class="col-md-4 col-md-offset-4">
+    <h2>Welcome</h2>
+    <p>Please register or sign in</p>
+  </div>
+  <div>
+    <%= link_to "Sign in", new_user_session_path, class: 'btn btn-primary', method: :get %>
+    <%= link_to "Register", new_user_registration_path, class: 'btn btn-success', method: :get %>
+  </div>
+  <% end %>
