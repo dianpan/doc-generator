@@ -18,7 +18,7 @@
         <td>$<%= doc.loan_amount %></td>
         <td>$<%= doc.down_payment %></td>
         <td>%<%= doc.interest_rate %></td>
-        <td><%= link_to 'View', document_path(doc.id, :format => 'pdf'), class: 'btn btn-primary' %></td>
+        <td><%= link_to 'View', document_path(doc.id, :format => 'pdf'), :target => "_blank", class: 'btn btn-primary' %></td>
       </tr>
       <% end %>
     </tbody>
