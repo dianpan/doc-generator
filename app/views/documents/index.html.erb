@@ -1,0 +1,31 @@
+<div class="col-md-4 col-md-offset-4">
+  <h2>Your Documents</h2>
+
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Loan Amount</th>
+        <th>Down Payment</th>
+        <th>Interest Rate</th>
+        <th>View</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @documents.each do |doc| %>
+      <tr>
+        <th scope="row"><%= doc.id %></th>
+        <td>$<%= doc.loan_amount %></td>
+        <td>$<%= doc.down_payment %></td>
+        <td>%<%= doc.interest_rate %></td>
+        <td><%= link_to 'View', document_path(doc.id, :format => 'pdf'), class: 'btn btn-primary' %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <div class="well">
+    <%= link_to "Create New", new_document_path, class: 'btn btn-primary', method: :get %>
+  </div>
+
+</div>

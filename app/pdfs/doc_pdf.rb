@@ -1,7 +1,7 @@
 class DocPdf < Prawn::Document
   def initialize(document, view)
     super()
-    text "This is your loan document"
+    text "Your loan document:"
     @document = document
     @view = view
     loan_amount
