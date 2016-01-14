@@ -34,6 +34,6 @@ class DocumentsController < ApplicationController
 
   private
     def documents_params
-      params.require(:document).permit(:loan_amount, :down_payment, :interest_rate, :file)
+      params.require(:document).permit(:loan_amount, :down_payment, :interest_rate).permit(:file)
     end
 end
