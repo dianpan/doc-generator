@@ -31,8 +31,8 @@ gem 'bootstrap-sass', '~> 3.3.6'
 gem 'prawn'
 
 # Use paperclip for file uploads
-# gem "paperclip", "~> 4.3"
-# gem 'aws-sdk'
+gem "paperclip", "~> 4.3"
+gem 'aws-sdk'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
