@@ -12,7 +12,7 @@ class DocumentsController < ApplicationController
   def create
     document = current_user.documents.build(documents_params)
     document.save ? flash[:success] = "Success, document has been created!" : flash[:error] = "Document did not save, please try again."
-      redirect_to root_path
+      redirect_to documents_path
   end
 
   def show
