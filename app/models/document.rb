@@ -6,7 +6,14 @@ class Document < ActiveRecord::Base
 
   belongs_to :user
 
-  has_attached_file :file
+  has_attached_file :file,
+                    :storage => :s3,
+                    :s3_credentials => {:bucket => ENV['AWS_BUCKET'],
+                                        :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
+                                        :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']},
+                                        :s3_protocol    => "https",
+                                        :s3_host_name   => "s3-us-west-1.amazonaws.com"
+
   validates_attachment :file, :content_type => { :content_type => 'application/pdf' }
 
 end
