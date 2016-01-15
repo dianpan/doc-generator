@@ -2,9 +2,9 @@ Rails.application.configure do
   config.paperclip_defaults = {
     :storage => :s3,
     :s3_credentials => {
-      :bucket => ENV['roostifyfile'],
-      :access_key_id => ENV['AKIAJE46PMUCDKZF7JLA'],
-      :secret_access_key => ENV['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']
+      :bucket => ENV['AWS_BUCKET'],
+      :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
+      :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
     }
   }
   # Settings specified here will take precedence over those in config/application.rb.
