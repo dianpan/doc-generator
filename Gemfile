@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 gem 'rails', '4.2.4'
 # Use postgresql as the database for Active Record
 gem 'pg'
-gem 'rails_12factor', group: :production
+gem 'rails_12factor'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -31,8 +31,8 @@ gem 'bootstrap-sass', '~> 3.3.6'
 gem 'prawn'
 
 # Use paperclip for file uploads
-# gem "paperclip", "~> 4.3"
-# gem 'aws-sdk'
+gem "paperclip", "~> 4.3"
+gem 'aws-sdk'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
