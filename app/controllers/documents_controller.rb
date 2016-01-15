@@ -16,7 +16,6 @@ class DocumentsController < ApplicationController
     file_name = "loan_document_#{current_user.id}.pdf"
     pdf.render_file(file_name)
     document.file = File.open(file_name)
-    url =  "#{document.file}"
 
     document.save! ? flash[:success] = "Success, document has been created!" : flash[:error] = "Document did not save, please try again."
     redirect_to documents_path
