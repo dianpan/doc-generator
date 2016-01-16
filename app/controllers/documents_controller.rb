@@ -2,6 +2,7 @@ class DocumentsController < ApplicationController
   before_action :authenticate_user!
 
   def index
+    @document = Document.new
     @documents = current_user.documents.all
   end
 
@@ -17,8 +18,13 @@ class DocumentsController < ApplicationController
     pdf.render_file(file_name)
     document.file = File.open(file_name)
 
-    document.save! ? flash[:success] = "Success, document has been created!" : flash[:error] = "Document did not save, please try again."
-    redirect_to documents_path
+    if document.save
+      flash[:success] = "Success, document has been created!"
+      redirect_to documents_path
+    else
+      render :new
+    end
+
   end
 
   private

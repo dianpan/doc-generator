@@ -33,6 +33,17 @@
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+
+            <% if @document.errors.any? %>
+              <div class="alert alert-danger" role="alert">
+                <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                <span class="sr-only">Error:</span>
+                <% @document.errors.messages.each do |msg| %>
+                  <li><%= msg %></li>
+                <% end %>
+              </div>
+            <% end %>
+
             <h4 class="modal-title" id="myModalLabel">Create a document</h4>
           </div>
           <div class="modal-body">
