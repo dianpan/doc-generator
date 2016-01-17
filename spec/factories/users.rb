@@ -1,11 +1,12 @@
 FactoryGirl.define do
-  factory :user do
-    email Faker::Internet.email
-    password Faker::Internet.password(8)
+  factory :user, class: User do
+    email { Faker::Internet.email }
+    password '12345678'
+    password_confirmation '12345678'
   end
 
-  factory :new_user, class: User do
-    email {Faker::Internet.email}
-    password {Faker::Internet.password(8)}
+  factory :invalid_user do
+    email nil
   end
+
 end
