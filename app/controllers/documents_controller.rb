@@ -2,8 +2,12 @@ class DocumentsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @document = Document.new
-    @documents = current_user.documents.all
+    if user_signed_in?
+      @document = Document.new
+      @documents = current_user.documents.all
+    else
+      redirect_to pages_index_path
+    end
   end
 
   def create
