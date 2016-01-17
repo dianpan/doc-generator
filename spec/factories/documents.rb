@@ -9,6 +9,8 @@ FactoryGirl.define do
   factory :invalid_document do
     association :user, factory: :user
     loan_amount nil
+    down_payment nil
+    interest_rate nil
   end
 
   factory :negative_amount_document do
