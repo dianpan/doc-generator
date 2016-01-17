@@ -23,50 +23,5 @@
       <% end %>
     </tbody>
   </table>
-
-  <div class="container">
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#formModal">Create New</button>
-
-    <!-- Modal -->
-    <div class="modal fade" id="formModal" role="dialog">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-
-            <% if @document.errors.any? %>
-              <div class="alert alert-danger" role="alert">
-                <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-                <span class="sr-only">Error:</span>
-                <% @document.errors.messages.each do |msg| %>
-                  <li><%= msg %></li>
-                <% end %>
-              </div>
-            <% end %>
-
-            <h4 class="modal-title" id="myModalLabel">Create a document</h4>
-          </div>
-          <div class="modal-body">
-            <%= form_for :document, html: { multipart: true } do |f| %>
-              <div class="form-group">
-                <%= f.label "Loan Amount" %>
-                <%= f.text_field :loan_amount, required: true, class: 'form-control' %>
-              </div>
-              <div class="form-group">
-                <%= f.label "Down Payment" %>
-                <%= f.text_field :down_payment, required: true, class: 'form-control' %>
-              </div>
-              <div class="form-group">
-                <%= f.label "Interest Rate" %>
-                <%= f.text_field :interest_rate, required: true, class: 'form-control' %>
-              </div>
-              <div class="form-group">
-                <%= f.submit "Submit", class: 'btn btn-primary' %>
-              </div>
-            <% end %>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  <%= render "modal" %>
 </div>
