@@ -12,6 +12,6 @@
     <%= f.text_field :interest_rate, required: true, class: 'form-control' %>
   </div>
   <div class="form-group">
-    <%= f.submit "Submit", class: 'btn btn-primary' %>
+    <%= f.submit "Submit", class: 'btn btn-primary', onclick: 'return validateForm();' %>
   </div>
 <% end %>
