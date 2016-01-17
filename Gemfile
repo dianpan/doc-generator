@@ -51,6 +51,7 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'faker'
   gem 'capybara'
+  gem "codeclimate-test-reporter"
 end
 
 group :development do
