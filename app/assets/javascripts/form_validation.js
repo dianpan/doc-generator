@@ -1,53 +1,46 @@
-// $(document).ready(function() {
+$(document).ready(function() {
 
-//     //custom validations
-//     $.validator.addMethod("greaterThanZero", function(value, element) {
-//       return this.optional(element) || (parseFloat(value) > 0);
-//     }, "* Loan amount must be greater than $0");
+    //custom validations
+    $.validator.addMethod("greaterThanZero", function(value, element) {
+      return this.optional(element) || (parseFloat(value) > 0);
+    }, "* Loan amount must be greater than $0");
 
-//     $.validator.addMethod("greaterThanOrEqualToZero", function(value, element) {
-//       return this.optional(element) || (parseFloat(value) >= 0);
-//     }, "* Amount must be at least 0");
+    $.validator.addMethod("greaterThanOrEqualToZero", function(value, element) {
+      return this.optional(element) || (parseFloat(value) >= 0);
+    }, "* Amount must be at least 0");
 
-
-//   $("#documentForm").validate({
-//     debug: true,
-//     rules: {
-//       "document[loan_amount]": {
-//         required: true,
-//         min: 1
-//         // amount: { greaterThanZero: true }
-//       }
-//       "document[down_payment]": {
-//         required: true,
-//         min: 0
-//         // amount: { greaterThanOrEqualToZero: true }
-//       },
-//       "document[interest_rate]": {
-//         required: true,
-//         range: [0,1000]
-//         // amount: { greaterThanOrEqualToZero: true }
-//       }
-//     },
-//     highlight: function(element) {
-//       $(element).closest('.form-group').addClass('error');
-//     },
-//     success: function(element) {
-//       $(element).closest('.form-group').removeClass('error').addClass('success');
-//     },
-//     submitHandler: function(form) {
-//       $.ajax({
-//         type: "post",
-//         // url: "../php/client/json.php",
-//         data: form.serialize(),
-//         success: function(data, status) {
-//           $(this).modal('hide');
-//         }
-//     });
-//       return false;
-//     }
-//   });
-// });
+  $("#documentForm").validate({
+    // debug: true,
+    rules: {
+      "document[loan_amount]": {
+        required: true,
+        min: 1
+        // amount: { greaterThanZero: true }
+      }
+      "document[down_payment]": {
+        required: true,
+        min: 0
+        // amount: { greaterThanOrEqualToZero: true }
+      },
+      "document[interest_rate]": {
+        required: true,
+        range: [0,1000]
+        // amount: { greaterThanOrEqualToZero: true }
+      }
+    }
+    // submitHandler: function(form) {
+    //   $.ajax({
+    //     type: "post",
+    //     // url: "../php/client/json.php",
+    //     data: form.serialize(),
+    //     success: function(data, status) {
+    //       $(this).modal('hide');
+    //     }
+    // });
+    //   return false;
+    // }
+  });
+});
 
 
 
