@@ -17,7 +17,7 @@
         <th scope="row"><%= doc.id %></th>
         <td>$<%= doc.loan_amount %></td>
         <td>$<%= doc.down_payment %></td>
-        <td>%<%= doc.interest_rate %></td>
+        <td><%= doc.interest_rate %>%</td>
         <td><%= link_to 'View', doc.file.url, :target => "_blank", class: 'btn btn-primary' %></td>
       </tr>
       <% end %>

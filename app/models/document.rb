@@ -1,6 +1,5 @@
 class Document < ActiveRecord::Base
   belongs_to :user
-  before_save :round_interest_rate
 
   validates_presence_of :loan_amount, message: "Please fill in a loan amount."
   validates_presence_of :down_payment, message: "Please fill in a down payment amount."
@@ -19,10 +18,6 @@ class Document < ActiveRecord::Base
     if down_payment > loan_amount
       errors.add(:down_payment, "cannot be greater than your loan amount")
     end
-  end
-
-  def round_interest_rate
-    interest_rate.round
   end
 
 end
