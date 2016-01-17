@@ -1,15 +1,15 @@
-<%= form_for :document, html: { multipart: true, id: 'documentForm' } do |f| %>
+<%= form_for @document, validate: true, html: { multipart: true, id: 'documentForm' } do |f| %>
   <div class="form-group">
     <%= f.label "Loan Amount" %>
-    <%= f.text_field :loan_amount, required: true, class: 'form-control required' %>
+    <%= f.text_field :loan_amount, validate: true, class: 'form-control required' %>
   </div>
   <div class="form-group">
     <%= f.label "Down Payment" %>
-    <%= f.text_field :down_payment, required: true, class: 'form-control required' %>
+    <%= f.text_field :down_payment, validate: true, class: 'form-control required' %>
   </div>
   <div class="form-group">
     <%= f.label "Interest Rate" %>
-    <%= f.text_field :interest_rate, required: true, class: 'form-control required' %>
+    <%= f.text_field :interest_rate, validate: true, class: 'form-control required' %>
   </div>
   <div class="form-group">
     <%= f.submit "Submit", class: 'btn btn-primary' %>
