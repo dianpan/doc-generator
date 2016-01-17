@@ -6,10 +6,6 @@ class DocumentsController < ApplicationController
     @documents = current_user.documents.all
   end
 
-  def new
-    @document = Document.new
-  end
-
   def create
     document = Document.new(documents_params)
     document.user_id = current_user.id

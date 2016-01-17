@@ -23,6 +23,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use devise for user authentication
 gem 'devise', '~> 3.5.3'
+gem 'warden'
 
 # Use bootstrap library for styles
 gem 'bootstrap-sass', '~> 3.3.6'
