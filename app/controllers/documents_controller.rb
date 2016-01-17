@@ -20,7 +20,6 @@ class DocumentsController < ApplicationController
 
     document.save ? flash[:success] = "Success, document has been created!" : flash[:error] = "There was an error, please try again"
     redirect_to documents_path
-
   end
 
   private
