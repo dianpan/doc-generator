@@ -22,7 +22,8 @@ class DocumentsController < ApplicationController
       flash[:success] = "Success, document has been created!"
       redirect_to documents_path
     else
-      render :new
+      flash[:error] = "There was an error, please try again"
+      redirect_to documents_path
     end
 
   end
