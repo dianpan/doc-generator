@@ -38,6 +38,7 @@ gem 'aws-sdk', '< 2.0'
 
 # Use coveralls to see test coverage
 gem 'coveralls', require: false
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -54,11 +55,6 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'faker'
   gem 'capybara'
-  gem "codeclimate-test-reporter"
-end
-
-group :test do
-  gem 'shoulda-matchers'
 end
 
 group :development do
