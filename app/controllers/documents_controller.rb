@@ -8,12 +8,9 @@ class DocumentsController < ApplicationController
   def create
     document = Document.new(documents_params)
     document.user_id = current_user.id
-    pdf = DocPdf.new(document, view_context)
-    file_name = "loan_document.pdf"
-    pdf.render_file(file_name)
-    document.file = File.open(file_name)
-
-    document.save ? flash[:success] = "Success, document has been created!" : flash[:error] = "There was an error, please try again"
+    document.pdf_create
+    document.file = File.open("loan_document.pdf")
+    document.save ? flash[:success] = "Document has been created!" : flash[:error] = "There was an error, please try again"
     redirect_to documents_path
   end
 

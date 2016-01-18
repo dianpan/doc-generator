@@ -1,16 +1,16 @@
 class DocPdf < Prawn::Document
-  def initialize(document, view)
+  def initialize(document)
     super()
-    move_down 5
+    move_down 10
     text "Your loan document:", style: :bold, size: 25
     @document = document
-    @view = view
     move_down 10
     loan_amount
     move_down 2
     down_payment
     move_down 2
     interest_rate
+    render_file("loan_document.pdf")
   end
 
   def loan_amount

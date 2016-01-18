@@ -1,11 +1,12 @@
 class Document < ActiveRecord::Base
+  before_save :pdf_create
   belongs_to :user
 
   validates_presence_of :loan_amount, :down_payment, :interest_rate
 
   validates_numericality_of :loan_amount, :greater_than => 0, on: :create, message: "Loan amount must be greater than $0."
-  validates_numericality_of :down_payment, :greater_than_or_equal_to => 0, on: :create, message: "Sorry, down payment cannot be negative!"
-  validates_numericality_of :interest_rate, :greater_than_or_equal_to => 0, inclusion: { in: 0..1000 }, on: :create, message: "Nice try, but interest rates can't be negative!"
+  validates_numericality_of :down_payment, :greater_than_or_equal_to => 0, on: :create, message: "Down payment cannot be negative."
+  validates_numericality_of :interest_rate, :greater_than_or_equal_to => 0, inclusion: { in: 0..1000 }, on: :create, message: "Interest rates cannot be negative."
 
   validate :downpay_cannot_be_greater_than_loan
 
@@ -18,6 +19,10 @@ class Document < ActiveRecord::Base
         errors.add(:down_payment, "cannot be greater than your loan amount")
       end
     end
+  end
+
+  def pdf_create
+    DocPdf.new(self)
   end
 
 end
