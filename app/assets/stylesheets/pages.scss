@@ -1,3 +1,25 @@
 // Place all the styles related to the pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.jumbotron {
+  background-color: #342d47 !important
+}
+
+h1 {
+  color: #dd4952 !important;
+}
+
+p {
+  color: #ffffff !important;
+}
+
+.btn {
+    border: 1px solid #fff !important;
+    padding: 7px 15px !important;
+    border-radius: 2px !important;
+    margin-left: 8px !important;
+    margin-right: 1px !important;
+    background: transparent !important;
+    color: #ffffff !important;
+}
