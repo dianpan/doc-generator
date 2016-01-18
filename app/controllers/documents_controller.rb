@@ -2,7 +2,6 @@ class DocumentsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @document = Document.new
     @documents = current_user.documents.all
   end
 
