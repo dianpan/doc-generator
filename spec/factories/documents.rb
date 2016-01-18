@@ -4,20 +4,12 @@ FactoryGirl.define do
     loan_amount 10000
     down_payment 100
     interest_rate 10
-  end
 
-  factory :invalid_document do
-    association :user, factory: :user
-    loan_amount nil
-    down_payment nil
-    interest_rate nil
+    factory :invalid_document do
+      association :user, factory: :user
+      loan_amount nil
+      down_payment nil
+      interest_rate nil
+    end
   end
-
-  factory :negative_amount_document do
-    association :user, factory: :user
-    loan_amount -1
-    down_payment -1
-    interest_rate -1
-  end
-
 end

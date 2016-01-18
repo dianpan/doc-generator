@@ -3,17 +3,13 @@ require 'rails_helper'
 describe DocumentsController do
   before(:each) { login_with create( :user ) }
   let!(:user) { FactoryGirl.create :user}
-  let!(:document) { FactoryGirl.create :document, :user_id => user.id }
+  let(:document) { FactoryGirl.create :document, :user_id => user.id }
+  let(:invalid_document) { FactoryGirl.create :invalid_document, :user_id => user.id }
 
   describe 'GET #index' do
     it 'should let a user see all their documents' do
       get :index
       expect(response).to render_template(:index)
-    end
-
-    it 'assigns a new Document to @document' do
-      get :index
-      expect(assigns(:document)).to be_a_new Document
     end
   end
 
@@ -25,6 +21,12 @@ describe DocumentsController do
       it 'redirects to documents#index' do
         post :create, document: attributes_for(:document)
         expect(response).to redirect_to documents_path
+      end
+    end
+
+    context 'with invalid attributes' do
+      it 'does not save the new document to the database' do
+        expect{ post :create, document: attributes_for(:invalid_document) }.not_to change(Document, :count)
       end
     end
   end
