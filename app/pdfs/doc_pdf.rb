@@ -22,6 +22,6 @@ class DocPdf < Prawn::Document
   end
 
   def interest_rate
-    text "Interest rate: %#{@document.interest_rate}"
+    text "Interest rate: #{@document.interest_rate}%"
   end
 end

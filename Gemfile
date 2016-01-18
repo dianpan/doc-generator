@@ -27,6 +27,7 @@ gem 'warden'
 
 # Use bootstrap library for styles
 gem 'bootstrap-sass', '~> 3.3.6'
+gem 'bootstrap_form'
 
 # Use prawn for pdf generation
 gem 'prawn'

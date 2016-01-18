@@ -1,17 +1,14 @@
-<%= form_for :document, html: { multipart: true } do |f| %>
+<%= bootstrap_form_for :document, label_errors: true, html: { multipart: true } do |f| %>
   <div class="form-group">
-    <%= f.label "Loan Amount" %>
-    <%= f.text_field :loan_amount, required: true, class: 'form-control' %>
+    <%= f.number_field :loan_amount, prepend: "$", required: true, class: 'form-control', label_class: "required" %>
   </div>
   <div class="form-group">
-    <%= f.label "Down Payment" %>
-    <%= f.text_field :down_payment, required: true, class: 'form-control' %>
+    <%= f.number_field :down_payment, prepend: "$", required: true, label_class: "required" %>
   </div>
   <div class="form-group">
-    <%= f.label "Interest Rate" %>
-    <%= f.text_field :interest_rate, required: true, class: 'form-control' %>
+    <%= f.number_field :interest_rate, append: "%", required: true, label_class: "required" %>
   </div>
   <div class="form-group">
-    <%= f.submit "Submit", class: 'btn btn-primary' %>
+    <%= f.submit "Submit" %>
   </div>
 <% end %>

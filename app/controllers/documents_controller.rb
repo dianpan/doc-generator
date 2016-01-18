@@ -2,12 +2,8 @@ class DocumentsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    if user_signed_in?
-      @document = Document.new
-      @documents = current_user.documents.all
-    else
-      redirect_to pages_index_path
-    end
+    @document = Document.new
+    @documents = current_user.documents.all
   end
 
   def create
@@ -20,7 +16,6 @@ class DocumentsController < ApplicationController
 
     document.save ? flash[:success] = "Success, document has been created!" : flash[:error] = "There was an error, please try again"
     redirect_to documents_path
-
   end
 
   private
