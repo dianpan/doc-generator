@@ -10,11 +10,6 @@ describe DocumentsController do
       get :index
       expect(response).to render_template(:index)
     end
-
-    it 'assigns a new Document to @document' do
-      get :index
-      expect(assigns(:document)).to be_a_new Document
-    end
   end
 
   describe 'POST #create' do

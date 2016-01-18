@@ -37,4 +37,12 @@ describe Document do
       interest_rate: -1)
     expect(document.valid?).to eq(false)
   end
+
+  it 'is invalid when the down payment is greater than the loan amount' do
+    document = Document.new(
+      loan_amount: 10,
+      down_payment: 100,
+      interest_rate: 10)
+    expect(document.valid?).to eq(false)
+  end
 end
