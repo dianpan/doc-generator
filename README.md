@@ -1,4 +1,4 @@
-# doc-uploader
+# doc-generator
 [![Code Climate](https://codeclimate.com/github/dianpan/doc-uploader/badges/gpa.svg)](https://codeclimate.com/github/dianpan/doc-uploader)
 [![Test Coverage](https://codeclimate.com/github/dianpan/doc-uploader/badges/coverage.svg)](https://codeclimate.com/github/dianpan/doc-uploader/coverage)
 
