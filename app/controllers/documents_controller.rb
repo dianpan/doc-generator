@@ -10,7 +10,7 @@ class DocumentsController < ApplicationController
     document.user_id = current_user.id
     document.pdf_create
     document.file = File.open("loan_document.pdf")
-    document.save ? flash[:success] = "Document has been created!" : flash[:error] = "There was an error, please try again"
+    document.save ? flash[:success] = "Document has been created!" : flash[:error] = "Error, please try again"
     redirect_to documents_path
   end
 
