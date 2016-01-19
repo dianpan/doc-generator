@@ -49,6 +49,14 @@
         1,
         null
       ],
+      "/Users/dianpan/Personal-Projects/roostify/doc-uploader/app/controllers/pages_controller.rb": [
+        1,
+        null,
+        1,
+        null,
+        null,
+        null
+      ],
       "/Users/dianpan/Personal-Projects/roostify/doc-uploader/app/models/document.rb": [
         1,
         1,
@@ -107,16 +115,8 @@
         5,
         null,
         null
-      ],
-      "/Users/dianpan/Personal-Projects/roostify/doc-uploader/app/controllers/pages_controller.rb": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
       ]
     },
-    "timestamp": 1453148525
+    "timestamp": 1453186594
   }
 }
