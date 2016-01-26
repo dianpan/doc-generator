@@ -4,10 +4,8 @@
 
 A single page application that allows users to create PDF documents of their loan information.
 
-Ruby v 2.2.1p85
-
-Rails v 4.2.4
-
-Database: PostgresQL
-
-
+##Built using: 
+- Ruby v 2.2.1p85
+- Rails v 4.2.4
+- PostgresQL
+- Bootstrap
